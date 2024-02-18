@@ -1,0 +1,570 @@
+000003 T0000 VOTE S0 Follower -> Candidator at term: T1
+Test (PartA): initial election ...
+000004 T0000 VOTE S1 Follower -> Candidator at term: T1
+000004 T0000 VOTE S2 Follower -> Candidator at term: T1
+000006 T0001 VOTE S0 -> S1, Reject, Already voted to S0
+000006 T0001 VOTE S1 -> S2, Reject, Already voted to S1
+000006 T0001 VOTE S2 -> S1, Reject, Already voted to S2
+000007 T0001 VOTE S2 -> S0, Reject, Already voted to S2
+000007 T0001 VOTE S0 -> S2, Reject, Already voted to S0
+000007 T0001 VOTE S1 -> S0, Reject, Already voted to S1
+001956 T0001 VOTE S1 Candidator -> Candidator at term: T2
+001959 T0001 LOG1 S0 Candidator -> Follower at term: T1->T2
+001959 T0002 VOTE S0 -> S1, Vote Granted
+001959 T0001 LOG1 S2 Candidator -> Follower at term: T1->T2
+001960 T0002 VOTE S2 -> S1, Vote Granted
+001960 T0002 LEAD S1 Leader at term: T2
+001960 T0002 LEAD S1 S1 Become Leader at term: T2
+001961 T0002 VOTE S1 Lost Context, abort RequestVoteReply from S2
+  ... Passed --   3.1  3   66    8060    0
+031008 T0000 VOTE S0 Follower -> Candidator at term: T1
+Test (PartA): election after network failure ...
+031008 T0000 VOTE S1 Follower -> Candidator at term: T1
+031009 T0000 VOTE S2 Follower -> Candidator at term: T1
+031009 T0001 VOTE S2 -> S0, Reject, Already voted to S2
+031010 T0001 VOTE S1 -> S2, Reject, Already voted to S1
+031010 T0001 VOTE S0 -> S2, Reject, Already voted to S0
+031010 T0001 VOTE S1 -> S0, Reject, Already voted to S1
+031010 T0001 VOTE S2 -> S1, Reject, Already voted to S2
+031011 T0001 VOTE S0 -> S1, Reject, Already voted to S0
+032219 T0001 VOTE S2 Candidator -> Candidator at term: T2
+032221 T0001 LOG1 S1 Candidator -> Follower at term: T1->T2
+032221 T0002 VOTE S1 -> S2, Vote Granted
+032221 T0001 LOG1 S0 Candidator -> Follower at term: T1->T2
+032221 T0002 VOTE S0 -> S2, Vote Granted
+032222 T0002 LEAD S2 Leader at term: T2
+032222 T0002 LEAD S2 S2 Become Leader at term: T2
+032222 T0002 VOTE S2 Lost Context, abort RequestVoteReply from S0
+037756 T0002 VOTE S1 Follower -> Candidator at term: T3
+037758 T0002 LOG1 S0 Follower -> Follower at term: T2->T3
+037758 T0003 VOTE S0 -> S1, Vote Granted
+037759 T0003 LEAD S1 Leader at term: T3
+037759 T0003 LEAD S1 S1 Become Leader at term: T3
+038645 T0002 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+040312 T0002 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+040789 T0002 LOG1 S2 Leader -> Follower at term: T2->T3
+041381 T0003 LOG1 S2 Lost Leader [T2] to Follower[T3]
+041842 T0003 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+043092 T0003 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+046960 T0003 VOTE S0 Follower -> Candidator at term: T4
+046982 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+049747 T0003 VOTE S2 Follower -> Candidator at term: T4
+050192 T0004 VOTE S0 Candidator -> Candidator at term: T5
+051134 T0004 VOTE S2 Candidator -> Candidator at term: T5
+052273 T0005 VOTE S0 Candidator -> Candidator at term: T6
+053582 T0005 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+053725 T0006 VOTE S0 Candidator -> Candidator at term: T7
+053907 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+054394 T0005 VOTE S2 Candidator -> Candidator at term: T6
+055030 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+056580 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+056916 T0006 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+057146 T0007 VOTE S0 Candidator -> Candidator at term: T8
+057505 T0006 VOTE S2 Candidator -> Candidator at term: T7
+059079 T0008 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+059426 T0007 VOTE S2 Candidator -> Candidator at term: T8
+059570 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+060340 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+060473 T0008 VOTE S0 Candidator -> Candidator at term: T9
+060505 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+061080 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+062388 T0008 VOTE S2 Candidator -> Candidator at term: T9
+063534 T0009 VOTE S2 Candidator -> Candidator at term: T10
+063664 T0009 VOTE S0 Candidator -> Candidator at term: T10
+063928 T0003 DBUG S1 Ask Vote From S2 Failed, Lost Or error
+064415 T0010 VOTE S2 Candidator -> Candidator at term: T11
+065445 T0011 VOTE S2 Candidator -> Candidator at term: T12
+065450 T0010 LOG1 S0 Candidator -> Follower at term: T10->T12
+065450 T0012 VOTE S0 -> S2, Vote Granted
+065452 T0012 LEAD S2 Leader at term: T12
+065452 T0012 LEAD S2 S2 Become Leader at term: T12
+066504 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+066573 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+068548 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+069324 T0012 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+071031 T0003 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+071055 T0012 LOG1 S0 -> S1, Reject AppendEntries, Higher Term: T3 > T12
+071055 T0012 LOG1 S2 -> S1, Reject AppendEntries, Higher Term: T3 > T12
+071163 T0003 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+071499 T0003 LOG1 S1 Leader -> Follower at term: T3->T12
+071561 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+071800 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+072062 T0012 LOG1 S1 Lost Leader [T3] to Follower[T12]
+072432 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+073505 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+074294 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+074517 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+074809 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+075458 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+075498 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+  ... Passed --   4.5  3  150   12190    0
+075778 T0000 VOTE S0 Follower -> Candidator at term: T1
+075779 T0000 VOTE S2 Follower -> Candidator at term: T1
+075779 T0000 VOTE S1 Follower -> Candidator at term: T1
+075780 T0000 VOTE S3 Follower -> Candidator at term: T1
+075781 T0000 LOG1 S5 Follower -> Follower at term: T0->T1
+075781 T0001 VOTE S5 -> S0, Vote Granted
+075781 T0000 VOTE S4 Follower -> Candidator at term: T1
+075781 T0001 VOTE S4 -> S2, Reject, Already voted to S4
+075781 T0001 VOTE S0 -> S1, Reject, Already voted to S0
+075782 T0001 VOTE S4 -> S0, Reject, Already voted to S4
+075782 T0001 VOTE S3 -> S1, Reject, Already voted to S3
+075782 T0001 VOTE S5 -> S2, Reject, Already voted to S0
+075782 T0001 VOTE S4 -> S1, Reject, Already voted to S4
+075782 T0000 VOTE S6 Follower -> Candidator at term: T1
+Test (PartA): multiple elections ...
+075783 T0001 VOTE S2 -> S1, Reject, Already voted to S2
+075783 T0001 VOTE S5 -> S6, Reject, Already voted to S0
+075783 T0001 VOTE S5 -> S1, Reject, Already voted to S0
+075783 T0001 VOTE S2 -> S4, Reject, Already voted to S2
+075783 T0001 VOTE S1 -> S6, Reject, Already voted to S1
+075784 T0001 VOTE S5 -> S4, Reject, Already voted to S0
+075784 T0001 VOTE S3 -> S4, Reject, Already voted to S3
+075784 T0001 VOTE S0 -> S3, Reject, Already voted to S0
+075784 T0001 VOTE S3 -> S6, Reject, Already voted to S3
+075784 T0001 VOTE S0 -> S6, Reject, Already voted to S0
+075785 T0001 VOTE S1 -> S3, Reject, Already voted to S1
+075785 T0001 VOTE S0 -> S4, Reject, Already voted to S0
+075785 T0001 VOTE S4 -> S6, Reject, Already voted to S4
+075785 T0001 VOTE S1 -> S4, Reject, Already voted to S1
+075785 T0001 VOTE S2 -> S3, Reject, Already voted to S2
+075785 T0001 VOTE S5 -> S3, Reject, Already voted to S0
+075786 T0001 VOTE S2 -> S6, Reject, Already voted to S2
+075786 T0001 VOTE S4 -> S3, Reject, Already voted to S4
+075976 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+076339 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+076637 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+076809 T0012 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+076932 T0001 VOTE S6 Candidator -> Candidator at term: T2
+076935 T0001 LOG1 S0 Candidator -> Follower at term: T1->T2
+076935 T0002 VOTE S0 -> S6, Vote Granted
+076935 T0001 LOG1 S1 Candidator -> Follower at term: T1->T2
+076935 T0002 VOTE S1 -> S6, Vote Granted
+076935 T0001 LOG1 S3 Candidator -> Follower at term: T1->T2
+076935 T0002 VOTE S3 -> S6, Vote Granted
+076936 T0001 LOG1 S4 Candidator -> Follower at term: T1->T2
+076936 T0002 VOTE S4 -> S6, Vote Granted
+076936 T0001 LOG1 S5 Follower -> Follower at term: T1->T2
+076936 T0002 VOTE S5 -> S6, Vote Granted
+076937 T0002 LEAD S6 Leader at term: T2
+076937 T0002 LEAD S6 S6 Become Leader at term: T2
+076941 T0002 VOTE S6 Lost Context, abort RequestVoteReply from S3
+076941 T0001 LOG1 S2 Candidator -> Follower at term: T1->T2
+076941 T0002 VOTE S2 -> S6, Vote Granted
+076942 T0002 VOTE S6 Lost Context, abort RequestVoteReply from S4
+076944 T0002 VOTE S6 Lost Context, abort RequestVoteReply from S2
+077240 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+077252 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+078426 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+078895 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+079248 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+079417 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+079965 T0012 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+080077 T0012 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+082449 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+083330 T0002 VOTE S2 Follower -> Candidator at term: T3
+083332 T0002 LOG1 S0 Follower -> Follower at term: T2->T3
+083332 T0003 VOTE S0 -> S2, Vote Granted
+083332 T0002 LOG1 S4 Follower -> Follower at term: T2->T3
+083332 T0003 VOTE S4 -> S2, Vote Granted
+083332 T0002 LOG1 S3 Follower -> Follower at term: T2->T3
+083332 T0003 VOTE S3 -> S2, Vote Granted
+083333 T0003 LEAD S2 Leader at term: T3
+083333 T0003 LEAD S2 S2 Become Leader at term: T3
+083921 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+084173 T0002 VOTE S5 Follower -> Candidator at term: T3
+085000 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+085110 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+085670 T0002 VOTE S1 Follower -> Candidator at term: T3
+085797 T0012 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+085889 T0003 VOTE S5 Candidator -> Candidator at term: T4
+085889 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+086013 T0003 DBUG S2 Ask Vote From S5 Failed, Lost Or error
+086159 T0002 LOG1 S6 appendEntries -> S3 Failed, Lost Or error
+086415 T0002 LOG1 S6 appendEntries -> S2 Failed, Lost Or error
+086546 T0003 DBUG S1 Ask Vote From S2 Failed, Lost Or error
+086720 T0004 VOTE S5 Candidator -> Candidator at term: T5
+087009 T0003 LOG1 S4 -> S6, Reject AppendEntries, Higher Term: T2 > T3
+087009 T0003 LOG1 S1 -> S6, Reject AppendEntries, Higher Term: T2 > T3
+087009 T0003 LOG1 S0 -> S6, Reject AppendEntries, Higher Term: T2 > T3
+087009 T0003 LOG1 S3 -> S6, Reject AppendEntries, Higher Term: T2 > T3
+087026 T0012 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+087542 T0003 VOTE S4 Follower -> Candidator at term: T4
+087543 T0002 LOG1 S6 Leader -> Follower at term: T2->T4
+087543 T0004 VOTE S6 -> S4, Vote Granted
+087543 T0003 LOG1 S3 Follower -> Follower at term: T3->T4
+087543 T0003 LOG1 S1 Candidator -> Follower at term: T3->T4
+087543 T0003 LOG1 S0 Follower -> Follower at term: T3->T4
+087544 T0004 VOTE S1 -> S4, Vote Granted
+087544 T0004 VOTE S0 -> S4, Vote Granted
+087543 T0004 VOTE S3 -> S4, Vote Granted
+087544 T0004 LEAD S4 Leader at term: T4
+087544 T0004 LEAD S4 S4 Become Leader at term: T4
+087544 T0004 VOTE S4 Lost Context, abort RequestVoteReply from S3
+087625 T0004 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+087656 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+088009 T0004 LOG1 S6 Lost Leader [T2] to Follower[T4]
+088079 T0004 DBUG S3 Ask Vote From S6 Failed, Lost Or error
+088099 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+088263 T0003 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+088767 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+089148 T0004 LOG1 S6 appendEntries -> S2 Failed, Lost Or error
+089185 T0005 VOTE S5 Candidator -> Candidator at term: T6
+089376 T0006 DBUG S5 Ask Vote From S2 Failed, Lost Or error
+089712 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+089732 T0004 DBUG S0 Ask Vote From S3 Failed, Lost Or error
+090222 T0006 DBUG S5 Ask Vote From S6 Failed, Lost Or error
+091024 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+091403 T0004 LOG1 S4 -> S2, Reject AppendEntries, Higher Term: T3 > T4
+091403 T0004 LOG1 S1 -> S2, Reject AppendEntries, Higher Term: T3 > T4
+091403 T0006 LOG1 S5 -> S2, Reject AppendEntries, Higher Term: T3 > T6
+091479 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+091566 T0003 LOG1 S2 Leader -> Follower at term: T3->T4
+091566 T0006 LOG1 S5 -> S4, Reject AppendEntries, Higher Term: T4 > T6
+091855 T0006 VOTE S5 Candidator -> Candidator at term: T7
+091857 T0004 LOG1 S4 Leader -> Follower at term: T4->T7
+091857 T0004 LOG1 S1 Follower -> Follower at term: T4->T7
+091857 T0007 VOTE S1 -> S5, Vote Granted
+091857 T0007 VOTE S4 -> S5, Vote Granted
+091858 T0004 LOG1 S2 Follower -> Follower at term: T4->T7
+091858 T0007 VOTE S2 -> S5, Vote Granted
+091858 T0007 LEAD S5 Leader at term: T7
+091858 T0007 LEAD S5 S5 Become Leader at term: T7
+091982 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+091982 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+092407 T0007 LOG1 S2 Lost Leader [T3] to Follower[T7]
+092574 T0007 LOG1 S4 Lost Leader [T4] to Follower[T7]
+092686 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+093009 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+093129 T0004 VOTE S0 Follower -> Candidator at term: T5
+093541 T0004 VOTE S6 Follower -> Candidator at term: T5
+093763 T0004 VOTE S3 Follower -> Candidator at term: T5
+094045 T0007 DBUG S5 Ask Vote From S6 Failed, Lost Or error
+094074 T0007 DBUG S4 Ask Vote From S5 Failed, Lost Or error
+094161 T0007 DBUG S4 Ask Vote From S6 Failed, Lost Or error
+094183 T0007 DBUG S5 Ask Vote From S1 Failed, Lost Or error
+094674 T0005 VOTE S3 Candidator -> Candidator at term: T6
+094743 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+095250 T0005 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+095689 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+095851 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+095889 T0005 VOTE S0 Candidator -> Candidator at term: T6
+095907 T0012 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+096042 T0007 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+096214 T0007 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+096695 T0006 VOTE S3 Candidator -> Candidator at term: T7
+096814 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+096823 T0005 VOTE S6 Candidator -> Candidator at term: T6
+096825 T0007 VOTE S1 -> S6, Reject Vote Request, Higher Term: T6 > T7%!(EXTRA int=6)
+096826 T0006 VOTE S0 -> S6, Reject, Already voted to S0
+096826 T0007 VOTE S4 -> S6, Reject Vote Request, Higher Term: T6 > T7%!(EXTRA int=6)
+096826 T0007 VOTE S5 -> S6, Reject Vote Request, Higher Term: T6 > T7%!(EXTRA int=6)
+096826 T0006 LOG1 S6 Candidator -> Follower at term: T6->T7
+096826 T0007 VOTE S6 Lost Context, abort RequestVoteReply from S0
+096827 T0007 VOTE S6 Lost Context, abort RequestVoteReply from S4
+096827 T0007 VOTE S6 Lost Context, abort RequestVoteReply from S5
+096897 T0006 LOG1 S0 Candidator -> Follower at term: T6->T7
+096947 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+097090 T0007 DBUG S0 Ask Vote From S6 Failed, Lost Or error
+097348 T0007 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+097590 T0007 LOG1 S6 appendEntries -> S4 Failed, Lost Or error
+097848 T0007 DBUG S3 Ask Vote From S6 Failed, Lost Or error
+097968 T0007 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+099044 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+099173 T0007 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+099218 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+099456 T0007 DBUG S3 Ask Vote From S2 Failed, Lost Or error
+099830 T0007 LOG1 S2 appendEntries -> S4 Failed, Lost Or error
+099915 T0007 DBUG S5 Ask Vote From S6 Failed, Lost Or error
+099971 T0007 VOTE S3 Candidator -> Candidator at term: T8
+100543 T0007 LOG1 S6 appendEntries -> S2 Failed, Lost Or error
+100821 T0007 DBUG S0 Ask Vote From S4 Failed, Lost Or error
+100918 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+101149 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+101380 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+101380 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+101403 T0007 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+101408 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+101607 T0008 DBUG S3 Ask Vote From S5 Failed, Lost Or error
+101680 T0007 LOG1 S6 appendEntries -> S0 Failed, Lost Or error
+101702 T0007 VOTE S2 Follower -> Candidator at term: T8
+101704 T0007 LOG1 S6 Follower -> Follower at term: T7->T8
+101704 T0008 VOTE S6 -> S2, Vote Granted
+101704 T0007 LOG1 S0 Follower -> Follower at term: T7->T8
+101704 T0008 VOTE S0 -> S2, Vote Granted
+101704 T0007 LOG1 S4 Follower -> Follower at term: T7->T8
+101705 T0008 VOTE S4 -> S2, Vote Granted
+101705 T0008 LEAD S2 Leader at term: T8
+101705 T0008 LEAD S2 S2 Become Leader at term: T8
+101722 T0008 LOG1 S4 appendEntries -> S2 Failed, Lost Or error
+101827 T0008 LOG1 S2 appendEntries -> S6 Failed, Lost Or error
+101922 T0008 VOTE S3 Candidator -> Candidator at term: T9
+102088 T0008 LOG1 S6 appendEntries -> S0 Failed, Lost Or error
+102423 T0008 LOG1 S6 appendEntries -> S3 Failed, Lost Or error
+102629 T0007 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+103157 T0007 LOG1 S5 appendEntries -> S2 Failed, Lost Or error
+103157 T0008 LOG1 S2 appendEntries -> S3 Failed, Lost Or error
+103563 T0008 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+103568 T0007 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+103627 T0008 DBUG S0 Ask Vote From S1 Failed, Lost Or error
+103998 T0007 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+104253 T0007 LOG1 S5 appendEntries -> S0 Failed, Lost Or error
+104649 T0008 LOG1 S6 appendEntries -> S0 Failed, Lost Or error
+104653 T0009 VOTE S3 Candidator -> Candidator at term: T10
+104695 T0008 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+105097 T0007 VOTE S1 Follower -> Candidator at term: T8
+105193 T0010 VOTE S3 Candidator -> Candidator at term: T11
+105562 T0012 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+105601 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+105623 T0008 DBUG S0 Ask Vote From S3 Failed, Lost Or error
+105939 T0007 LOG1 S5 appendEntries -> S0 Failed, Lost Or error
+106023 T0008 LOG1 S2 appendEntries -> S3 Failed, Lost Or error
+106194 T0008 DBUG S6 Ask Vote From S4 Failed, Lost Or error
+106274 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+106336 T0007 LOG1 S5 appendEntries -> S2 Failed, Lost Or error
+106565 T0007 DBUG S5 Ask Vote From S1 Failed, Lost Or error
+106698 T0008 VOTE S1 Candidator -> Candidator at term: T9
+106738 T0011 LOG1 S3 -> S2, Reject AppendEntries, Higher Term: T8 > T11
+106738 T0007 LOG1 S5 Leader -> Follower at term: T7->T8
+106740 T0008 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+106741 T0008 LOG1 S5 appendEntries -> S2 Failed, Lost Or error
+106799 T0008 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+106916 T0011 DBUG S3 Ask Vote From S1 Failed, Lost Or error
+106952 T0008 LOG1 S5 Lost Leader [T7] to Follower[T8]
+107081 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+107193 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+107241 T0008 LOG1 S2 appendEntries -> S3 Failed, Lost Or error
+107357 T0008 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+107427 T0008 LOG1 S2 appendEntries -> S3 Failed, Lost Or error
+107504 T0008 LOG1 S6 appendEntries -> S3 Failed, Lost Or error
+107537 T0011 VOTE S3 Candidator -> Candidator at term: T12
+107539 T0008 LOG1 S2 Leader -> Follower at term: T8->T12
+107539 T0012 VOTE S2 -> S3, Vote Granted
+107539 T0008 LOG1 S0 Follower -> Follower at term: T8->T12
+107539 T0012 VOTE S0 -> S3, Vote Granted
+107539 T0008 LOG1 S5 Follower -> Follower at term: T8->T12
+107539 T0012 VOTE S5 -> S3, Vote Granted
+107540 T0012 LEAD S3 Leader at term: T12
+107540 T0012 LEAD S3 S3 Become Leader at term: T12
+107649 T0008 LOG1 S6 appendEntries -> S5 Failed, Lost Or error
+107729 T0012 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+107729 T0012 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+107737 T0012 LOG1 S2 Lost Leader [T8] to Follower[T12]
+108111 T0008 LOG1 S6 appendEntries -> S1 Failed, Lost Or error
+108242 T0009 DBUG S1 Ask Vote From S0 Failed, Lost Or error
+109142 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+109357 T0008 VOTE S6 Follower -> Candidator at term: T9
+109464 T0012 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+109504 T0012 LOG1 S5 appendEntries -> S0 Failed, Lost Or error
+109546 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+109642 T0008 VOTE S4 Follower -> Candidator at term: T9
+109759 T0009 VOTE S1 Candidator -> Candidator at term: T10
+109858 T0012 LOG1 S5 appendEntries -> S0 Failed, Lost Or error
+110074 T0012 DBUG S5 Ask Vote From S3 Failed, Lost Or error
+110722 T0009 VOTE S4 Candidator -> Candidator at term: T10
+110908 T0009 VOTE S6 Candidator -> Candidator at term: T10
+110931 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+111020 T0010 LOG1 S6 appendEntries -> S5 Failed, Lost Or error
+111210 T0010 VOTE S1 Candidator -> Candidator at term: T11
+111281 T0012 LOG1 S5 appendEntries -> S4 Failed, Lost Or error
+111360 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+111569 T0010 LOG1 S6 Candidator -> Follower at term: T10->T12
+111808 T0011 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+111921 T0012 DBUG S0 Ask Vote From S3 Failed, Lost Or error
+111991 T0012 LOG1 S6 appendEntries -> S1 Failed, Lost Or error
+112174 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+112386 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+112501 T0012 LOG1 S3 appendEntries -> S6 Failed, Lost Or error
+112524 T0012 LOG1 S2 appendEntries -> S4 Failed, Lost Or error
+112657 T0011 DBUG S1 Ask Vote From S6 Failed, Lost Or error
+112980 T0012 LOG1 S2 appendEntries -> S6 Failed, Lost Or error
+113033 T0012 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+113075 T0011 DBUG S1 Ask Vote From S2 Failed, Lost Or error
+113098 T0012 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+113215 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+113380 T0011 VOTE S1 Candidator -> Candidator at term: T12
+113439 T0012 DBUG S5 Ask Vote From S2 Failed, Lost Or error
+113553 T0010 DBUG S4 Ask Vote From S5 Failed, Lost Or error
+113553 T0012 LOG1 S6 appendEntries -> S2 Failed, Lost Or error
+114038 T0010 VOTE S4 Candidator -> Candidator at term: T11
+114061 T0012 LOG1 S6 appendEntries -> S1 Failed, Lost Or error
+114282 T0012 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+114335 T0012 LOG1 S6 appendEntries -> S3 Failed, Lost Or error
+114375 T0011 DBUG S4 Ask Vote From S1 Failed, Lost Or error
+114414 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+114455 T0012 VOTE S1 Candidator -> Candidator at term: T13
+114671 T0013 DBUG S1 Ask Vote From S5 Failed, Lost Or error
+114921 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+115027 T0012 DBUG S5 Ask Vote From S6 Failed, Lost Or error
+115074 T0011 VOTE S4 Candidator -> Candidator at term: T12
+115244 T0012 DBUG S2 Ask Vote From S3 Failed, Lost Or error
+115653 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+115678 T0012 VOTE S2 Follower -> Candidator at term: T13
+115683 T0012 LOG1 S6 appendEntries -> S0 Failed, Lost Or error
+115893 T0013 VOTE S1 Candidator -> Candidator at term: T14
+116077 T0012 DBUG S4 Ask Vote From S2 Failed, Lost Or error
+116096 T0014 DBUG S1 Ask Vote From S0 Failed, Lost Or error
+116152 T0013 LOG1 S2 appendEntries -> S6 Failed, Lost Or error
+116187 T0012 DBUG S6 Ask Vote From S3 Failed, Lost Or error
+116218 T0012 VOTE S4 Candidator -> Candidator at term: T13
+116220 T0013 VOTE S2 -> S4, Reject, Already voted to S2
+116221 T0012 LOG1 S0 Follower -> Follower at term: T12->T13
+116221 T0013 VOTE S0 -> S4, Vote Granted
+116221 T0012 LOG1 S5 Follower -> Follower at term: T12->T13
+116222 T0013 VOTE S5 -> S4, Vote Granted
+116480 T0013 DBUG S2 Ask Vote From S6 Failed, Lost Or error
+116623 T0012 LOG1 S6 appendEntries -> S5 Failed, Lost Or error
+116651 T0012 DBUG S6 Ask Vote From S2 Failed, Lost Or error
+116789 T0013 VOTE S4 Candidator -> Candidator at term: T14
+116790 T0013 LOG1 S2 Candidator -> Follower at term: T13->T14
+116790 T0014 VOTE S2 -> S4, Vote Granted
+116791 T0013 LOG1 S0 Follower -> Follower at term: T13->T14
+116791 T0014 VOTE S0 -> S4, Vote Granted
+116791 T0013 LOG1 S5 Follower -> Follower at term: T13->T14
+116791 T0014 VOTE S5 -> S4, Vote Granted
+116792 T0014 LEAD S4 Leader at term: T14
+116792 T0014 LEAD S4 S4 Become Leader at term: T14
+117012 T0014 DBUG S1 Ask Vote From S3 Failed, Lost Or error
+117013 T0012 LOG1 S6 appendEntries -> S4 Failed, Lost Or error
+117111 T0014 DBUG S5 Ask Vote From S4 Failed, Lost Or error
+117147 T0014 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+117214 T0012 DBUG S6 Ask Vote From S0 Failed, Lost Or error
+117214 T0012 LOG1 S3 appendEntries -> S4 Failed, Lost Or error
+117382 T0014 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+117411 T0012 DBUG S3 Ask Vote From S5 Failed, Lost Or error
+117463 T0012 LOG1 S3 appendEntries -> S1 Failed, Lost Or error
+117514 T0014 VOTE S1 Candidator -> Candidator at term: T15
+117749 T0012 LOG1 S3 appendEntries -> S6 Failed, Lost Or error
+117785 T0014 DBUG S5 Ask Vote From S4 Failed, Lost Or error
+117873 T0014 LOG1 S5 appendEntries -> S2 Failed, Lost Or error
+117926 T0014 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+118092 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+118274 T0012 DBUG S3 Ask Vote From S6 Failed, Lost Or error
+118276 T0012 DBUG S3 Ask Vote From S6 Failed, Lost Or error
+118380 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+118424 T0012 DBUG S6 Ask Vote From S0 Failed, Lost Or error
+118450 T0015 DBUG S1 Ask Vote From S0 Failed, Lost Or error
+118539 T0012 VOTE S6 Follower -> Candidator at term: T13
+118735 T0012 DBUG S3 Ask Vote From S4 Failed, Lost Or error
+118883 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+119024 T0012 DBUG S3 Ask Vote From S0 Failed, Lost Or error
+119173 T0014 LOG1 S4 appendEntries -> S5 Failed, Lost Or error
+119282 T0012 LOG1 S3 appendEntries -> S1 Failed, Lost Or error
+119283 T0013 LOG1 S6 appendEntries -> S4 Failed, Lost Or error
+119312 T0013 LOG1 S6 appendEntries -> S5 Failed, Lost Or error
+119355 T0015 VOTE S1 Candidator -> Candidator at term: T16
+119435 T0012 DBUG S3 Ask Vote From S2 Failed, Lost Or error
+119535 T0013 DBUG S6 Ask Vote From S3 Failed, Lost Or error
+119681 T0014 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+119705 T0012 DBUG S3 Ask Vote From S6 Failed, Lost Or error
+119784 T0014 DBUG S5 Ask Vote From S0 Failed, Lost Or error
+120009 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+120012 T0014 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+120068 T0016 DBUG S1 Ask Vote From S5 Failed, Lost Or error
+120080 T0012 LOG1 S3 appendEntries -> S2 Failed, Lost Or error
+120126 T0014 DBUG S0 Ask Vote From S4 Failed, Lost Or error
+120137 T0016 VOTE S1 Candidator -> Candidator at term: T17
+120149 T0012 LOG1 S3 appendEntries -> S0 Failed, Lost Or error
+120157 T0014 LOG1 S2 appendEntries -> S1 Failed, Lost Or error
+120181 T0014 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+120351 T0014 DBUG S5 Ask Vote From S1 Failed, Lost Or error
+120369 T0014 LOG1 S2 appendEntries -> S6 Failed, Lost Or error
+120420 T0014 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+120539 T0012 LOG1 S3 appendEntries -> S0 Failed, Lost Or error
+120617 T0014 DBUG S5 Ask Vote From S2 Failed, Lost Or error
+120650 T0017 DBUG S1 Ask Vote From S5 Failed, Lost Or error
+120894 T0014 LOG1 S4 appendEntries -> S6 Failed, Lost Or error
+121041 T0017 DBUG S1 Ask Vote From S3 Failed, Lost Or error
+121147 T0014 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+121386 T0014 LOG1 S5 appendEntries -> S1 Failed, Lost Or error
+121441 T0014 LOG1 S5 appendEntries -> S4 Failed, Lost Or error
+121449 T0017 VOTE S1 Candidator -> Candidator at term: T18
+121450 T0014 LOG1 S4 Leader -> Follower at term: T14->T18
+121450 T0012 LOG1 S3 Leader -> Follower at term: T12->T18
+121450 T0018 VOTE S3 -> S1, Vote Granted
+121450 T0018 VOTE S4 -> S1, Vote Granted
+121451 T0014 LOG1 S0 Follower -> Follower at term: T14->T18
+121451 T0018 VOTE S0 -> S1, Vote Granted
+121450 T0014 LOG1 S2 Follower -> Follower at term: T14->T18
+121452 T0018 VOTE S2 -> S1, Vote Granted
+121452 T0018 LEAD S1 Leader at term: T18
+121452 T0018 LEAD S1 S1 Become Leader at term: T18
+121452 T0018 VOTE S1 Lost Context, abort RequestVoteReply from S2
+121500 T0018 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+121584 T0013 LOG1 S6 appendEntries -> S1 Failed, Lost Or error
+121647 T0018 LOG1 S3 Lost Leader [T12] to Follower[T18]
+121733 T0013 VOTE S6 Candidator -> Candidator at term: T14
+121785 T0018 DBUG S1 Ask Vote From S6 Failed, Lost Or error
+121816 T0018 LOG1 S4 Lost Leader [T14] to Follower[T18]
+121841 T0014 DBUG S6 Ask Vote From S4 Failed, Lost Or error
+121922 T0018 LOG1 S2 appendEntries -> S5 Failed, Lost Or error
+122261 T0018 DBUG S1 Ask Vote From S0 Failed, Lost Or error
+122581 T0018 DBUG S4 Ask Vote From S3 Failed, Lost Or error
+122665 T0014 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+122793 T0014 VOTE S6 Candidator -> Candidator at term: T15
+122858 T0018 LOG1 S3 appendEntries -> S1 Failed, Lost Or error
+122872 T0015 DBUG S6 Ask Vote From S3 Failed, Lost Or error
+123191 T0014 DBUG S5 Ask Vote From S6 Failed, Lost Or error
+123201 T0015 DBUG S6 Ask Vote From S5 Failed, Lost Or error
+123310 T0018 DBUG S1 Ask Vote From S6 Failed, Lost Or error
+123580 T0018 DBUG S2 Ask Vote From S3 Failed, Lost Or error
+123629 T0014 VOTE S5 Follower -> Candidator at term: T15
+123692 T0015 DBUG S6 Ask Vote From S2 Failed, Lost Or error
+123745 T0015 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+123948 T0018 DBUG S3 Ask Vote From S5 Failed, Lost Or error
+124429 T0015 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+124450 T0018 LOG1 S3 appendEntries -> S2 Failed, Lost Or error
+124531 T0018 DBUG S3 Ask Vote From S2 Failed, Lost Or error
+124664 T0015 VOTE S6 Candidator -> Candidator at term: T16
+124670 T0012 LOG1 S1 appendEntries -> S0 Failed, Lost Or error
+124778 T0016 DBUG S6 Ask Vote From S0 Failed, Lost Or error
+124778 T0015 DBUG S5 Ask Vote From S2 Failed, Lost Or error
+124850 T0018 DBUG S1 Ask Vote From S5 Failed, Lost Or error
+125021 T0018 LOG1 S3 appendEntries -> S4 Failed, Lost Or error
+125159 T0018 LOG1 S3 appendEntries -> S0 Failed, Lost Or error
+125194 T0016 DBUG S6 Ask Vote From S4 Failed, Lost Or error
+125335 T0018 DBUG S3 Ask Vote From S0 Failed, Lost Or error
+125424 T0018 DBUG S1 Ask Vote From S6 Failed, Lost Or error
+125472 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+125706 T0018 DBUG S1 Ask Vote From S6 Failed, Lost Or error
+126005 T0015 LOG1 S5 appendEntries -> S4 Failed, Lost Or error
+126204 T0016 DBUG S6 Ask Vote From S5 Failed, Lost Or error
+126245 T0015 DBUG S5 Ask Vote From S3 Failed, Lost Or error
+126291 T0018 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+126291 T0015 VOTE S5 Candidator -> Candidator at term: T16
+126293 T0016 VOTE S6 -> S5, Reject, Already voted to S6
+126293 T0018 VOTE S2 -> S5, Reject Vote Request, Higher Term: T16 > T18%!(EXTRA int=16)
+126293 T0018 VOTE S0 -> S5, Reject Vote Request, Higher Term: T16 > T18%!(EXTRA int=16)
+126294 T0016 LOG1 S5 Candidator -> Follower at term: T16->T18
+126294 T0018 VOTE S3 -> S5, Reject Vote Request, Higher Term: T16 > T18%!(EXTRA int=16)
+126294 T0018 VOTE S5 Lost Context, abort RequestVoteReply from S3
+126294 T0018 VOTE S4 -> S5, Reject Vote Request, Higher Term: T16 > T18%!(EXTRA int=16)
+126294 T0018 VOTE S5 Lost Context, abort RequestVoteReply from S0
+126294 T0018 VOTE S1 -> S5, Reject Vote Request, Higher Term: T16 > T18%!(EXTRA int=16)
+126295 T0018 VOTE S5 Lost Context, abort RequestVoteReply from S4
+126295 T0018 VOTE S5 Lost Context, abort RequestVoteReply from S1
+126359 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+126359 T0018 LOG1 S2 appendEntries -> S0 Failed, Lost Or error
+126487 T0016 LOG1 S6 Candidator -> Follower at term: T16->T18
+126502 T0018 LOG1 S2 appendEntries -> S4 Failed, Lost Or error
+126556 T0018 DBUG S2 Ask Vote From S0 Failed, Lost Or error
+126730 T0018 DBUG S2 Ask Vote From S6 Failed, Lost Or error
+126830 T0018 LOG1 S2 appendEntries -> S4 Failed, Lost Or error
+127036 T0012 DBUG S0 Ask Vote From S2 Failed, Lost Or error
+127672 T0018 LOG1 S2 appendEntries -> S4 Failed, Lost Or error
+127725 T0018 DBUG S1 Ask Vote From S4 Failed, Lost Or error
+127820 T0018 DBUG S2 Ask Vote From S3 Failed, Lost Or error
+128119 T0012 LOG1 S1 appendEntries -> S2 Failed, Lost Or error
+128552 T0012 DBUG S2 Ask Vote From S1 Failed, Lost Or error
+128860 T0018 DBUG S4 Ask Vote From S5 Failed, Lost Or error
+129379 T0018 DBUG S6 Ask Vote From S5 Failed, Lost Or error
+129454 T0018 DBUG S1 Ask Vote From S2 Failed, Lost Or error
+129823 T0018 DBUG S2 Ask Vote From S5 Failed, Lost Or error
+129918 T0018 LOG1 S5 appendEntries -> S0 Failed, Lost Or error
+130001 T0018 DBUG S1 Ask Vote From S2 Failed, Lost Or error
+130152 T0018 LOG1 S4 appendEntries -> S1 Failed, Lost Or error
+130539 T0018 LOG1 S5 appendEntries -> S6 Failed, Lost Or error
+130670 T0018 LOG1 S5 appendEntries -> S3 Failed, Lost Or error
+  ... Passed --   5.5  7  755   62845    0
+PASS
+ok  	partA/src/raft	13.079s
