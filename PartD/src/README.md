@@ -33,6 +33,6 @@ pip3 install typer rich
 
 ![](../resource/images/2024-02-21-23-20-06.png)
 
-![](resource/images/2024-02-21-23-37-00.png)
+![](../resource/images/2024-02-21-23-37-00.png)
 
-![](resource/images/2024-02-21-23-53-07.png)
+![](../resource/images/2024-02-21-23-53-07.png)
