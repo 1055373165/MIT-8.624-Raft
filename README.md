@@ -39,9 +39,9 @@ pip3 install typer rich
 
 输入下面结果表示测试成功：
 
-![](../resource/images/2024-02-21-23-20-06.png)
+![](PartD/resource/images/2024-02-21-23-20-06.png)
 
-![](../resource/images/2024-02-21-23-37-00.png)
+![](PartD/resource/images/2024-02-21-23-37-00.png)
 
-![](../resource/images/2024-02-21-23-53-07.png)
+![](PartD/resource/images/2024-02-21-23-53-07.png)
 
