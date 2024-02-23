@@ -1,8 +1,9 @@
 # MIT-8.624 Raft Implement
 
 # 简介
-
-Raft PartD 调试总结
+- PartA：实现了无日志同步的领导者选举功能（通过 lab 测试以及并发测试）
+- PartB：在 PartA 基础上实现了日志同步
+- PartC：在 PartB 基础上实现了日志应用
 
 PartD 实现了
 1. 领导者选举
