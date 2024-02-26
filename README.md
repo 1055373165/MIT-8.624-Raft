@@ -11,6 +11,37 @@ PartD 实现了
 3. 日志应用（matchIndex 数组进度取半数以上）
 4. 日志压缩
 
+# 代码结构
+```
+├── go.mod
+├── resource
+│   └── images
+├── src
+│   ├── README.md
+│   ├── labgob
+│   │   ├── labgob.go
+│   │   └── test_test.go
+│   ├── labrpc
+│   │   ├── labrpc.go
+│   │   └── test_test.go
+│   └── raft
+│       ├── config.go
+│       ├── out.txt
+│       ├── persister.go
+│       ├── raft.go
+│       ├── raft_application.go
+│       ├── raft_compaction.go
+│       ├── raft_election.go
+│       ├── raft_log.go
+│       ├── raft_persistence.go
+│       ├── raft_replication.go
+│       ├── test_test.go
+│       └── util.go
+└── tools
+    ├── dslogs
+    └── dstest
+```
+
 # 第一关：实验测试
 
 执行命令
